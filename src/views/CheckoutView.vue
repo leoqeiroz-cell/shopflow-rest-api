@@ -2,10 +2,8 @@
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Divider from 'primevue/divider';
-import { useAuthStore } from '../store/auth';
+import { authState } from '../store/auth';
 import { cartState, cartTotal, clearCart } from '../store/cart';
-
-const authStore = useAuthStore();
 
 const currency = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -24,7 +22,7 @@ const currency = new Intl.NumberFormat('pt-BR', {
       <div class="grid gap-6 lg:grid-cols-[1fr_280px]">
         <section>
           <div class="rounded-lg bg-emerald-50 p-4 text-sm text-emerald-800">
-            Pedido reservado para <strong>{{ authStore.user?.name }}</strong>. Pode revisar com calma.
+            Pedido reservado para <strong>{{ authState.user?.name }}</strong>. Pode revisar com calma.
           </div>
 
           <Divider />

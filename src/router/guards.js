@@ -1,6 +1,6 @@
-import { useAuthStore } from '../store/auth.js';
+import { authState } from '../store/auth.js';
 
-export function validateRouteAccess(to, auth = useAuthStore()) {
+export function validateRouteAccess(to, auth = authState) {
   if (to.meta.requiresAuth && !auth.isAuthenticated) {
     return {
       name: 'login',

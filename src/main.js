@@ -6,11 +6,9 @@ import './styles.css';
 
 import App from './App.vue';
 import router from './router';
-import { pinia } from './store';
-import ToastService from 'primevue/toastservice';
 
 createApp(App)
-  .use(pinia)
+  .use(router)
   .use(PrimeVue, {
     theme: {
       preset: Aura,
@@ -19,6 +17,4 @@ createApp(App)
       },
     },
   })
-  .use(ToastService)
-  .use(router)
   .mount('#app');

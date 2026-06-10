@@ -4,11 +4,10 @@ import Button from 'primevue/button';
 import Menu from 'primevue/menu';
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { useAuthStore } from '../store/auth';
+import { authState, logout } from '../store/auth';
 
 const route = useRoute();
 const router = useRouter();
-const authStore = useAuthStore();
 
 const adminMenu = [
   {
@@ -48,8 +47,8 @@ const breadcrumbItems = computed(() =>
 );
 
 function handleLogout() {
-  authStore.logout();
-  router.push({ name: 'login' });
+  logout();
+  router.push({ name: 'home' });
 }
 </script>
 
@@ -81,7 +80,7 @@ function handleLogout() {
 
           <div class="flex items-center gap-3">
             <span class="rounded-lg bg-zinc-100 px-3 py-2 text-sm text-zinc-700">
-              {{ authStore.user?.name }}
+              {{ authState.user?.name }}
             </span>
             <Button label="Sair" icon="pi pi-sign-out" severity="secondary" outlined @click="handleLogout" />
           </div>

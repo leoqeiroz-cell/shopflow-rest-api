@@ -34,6 +34,28 @@ npm run dev
 
 Use os botoes da tela de login para simular um usuario consumidor ou admin.
 
+## API REST da Atividade 6
+
+Este projeto tambem inclui uma API em Express + TypeScript para a atividade de
+Introducao ao Backend, com rotas REST para produtos e pedidos.
+
+Para executar a API:
+
+```bash
+npm run dev:api
+```
+
+Endpoints principais:
+
+- `GET /products`
+- `GET /products?category=eletronicos`
+- `GET /products/:id`
+- `POST /orders`
+- `PATCH /orders/:id`
+- `DELETE /orders/:id`
+
+O relatorio completo da atividade esta em `RELATORIO_ATIVIDADE06_BACKEND.md`.
+
 ## Como executar com Docker
 
 Esta versao tambem simula a entrega da aplicacao em container, usando Docker,

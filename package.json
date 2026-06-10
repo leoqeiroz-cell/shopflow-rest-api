@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
+    "dev:api": "tsx watch src/api/server.ts",
     "build": "vite build",
+    "build:api": "tsc -p tsconfig.json",
     "preview": "vite preview --host 127.0.0.1",
     "test:guards": "node scripts/verify-route-guards.mjs"
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "@vitejs/plugin-vue": "^5.2.3",
+    "express": "^5.2.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",
     "vite": "^6.3.5",
@@ -19,8 +22,12 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.2",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
   }
 }
